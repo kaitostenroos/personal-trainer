@@ -11,7 +11,12 @@ function TrainingList() {
   const [colDefs, setColDefs] = useState([
     {field: "date", filter: true, cellRenderer: (data) => formatDate(data.value)},
     {field: "duration", filter: true},
-    {field: "activity", filter: true}
+    {field: "activity", filter: true},
+    {
+      headerName: "Customer",
+      valueGetter: (params) => `${params.data.customer.firstname} ${params.data.customer.lastname}`,
+      filter: true
+    }
   ]);
 
   useEffect(() => {
@@ -20,7 +25,7 @@ function TrainingList() {
   
   const handleFetch = () => {
     getTrainings()
-      .then(data => setTrainings(data._embedded.trainings))
+      .then(data => setTrainings(data))
       .catch(error => console.log(error))
   };
 

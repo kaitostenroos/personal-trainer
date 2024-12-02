@@ -6,6 +6,6 @@ export function getCustomers() {
 }
 
 export function getTrainings() {
-    return fetch(apiUrl + 'trainings')
+    return fetch(apiUrl + 'gettrainings')
         .then(response => response.json())
 }
