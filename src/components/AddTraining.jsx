@@ -104,7 +104,7 @@ export default function AddTraining(props) {
                         variant="standard"
                     >
                         {customers.map((customer) => (
-                            <MenuItem key={customer.id} value={customer._links.self.href}>
+                            <MenuItem key={customer._links.self.href} value={customer._links.self.href}>
                                 {customer.firstname} {customer.lastname}
                             </MenuItem>
                         ))}

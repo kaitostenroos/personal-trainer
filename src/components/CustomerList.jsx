@@ -65,7 +65,7 @@ function CustomerList() {
                 />
                 <Snackbar 
                 open={open}
-                message="Car deleted"
+                message="Customer deleted"
                 autoHideDuration={3000}
                 onClose={handleClose}
                 />

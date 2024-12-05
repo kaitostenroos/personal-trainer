@@ -53,6 +53,16 @@ export function deleteCustomer(url) {
   })
 }
 
+export function deleteTraining(id) {
+    return fetch(apiUrl + "trainings/" + id, { method: "DELETE"})
+  .then(response => {
+    if (!response.ok)
+      throw new Error("Error in delete: " + response.statusText);
+
+    return response.json();
+  })
+}
+
 export function updateCustomer(url, customer) {
     return fetch(url, {
         method: 'PUT',
