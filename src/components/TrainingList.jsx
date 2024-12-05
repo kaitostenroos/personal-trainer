@@ -4,6 +4,7 @@ import "ag-grid-community/styles/ag-grid.css";
 import "ag-grid-community/styles/ag-theme-material.css"
 
 import { getTrainings } from "../api";
+import AddTraining from "./AddTraining";
 
 
 function TrainingList() {
@@ -14,7 +15,7 @@ function TrainingList() {
     {field: "activity", filter: true},
     {
       headerName: "Customer",
-      valueGetter: (params) => `${params.data.customer.firstname} ${params.data.customer.lastname}`,
+      valueGetter: (params) => `${params.data.customer?.firstname} ${params.data.customer?.lastname}`,
       filter: true
     }
   ]);
@@ -37,6 +38,7 @@ function TrainingList() {
   return (
     <>
       <div className="ag-theme-material" style={{ height: 700, width: "90%", margin: "auto" }}>
+        <AddTraining handleFetch={handleFetch}/>
         <AgGridReact
           rowData={trainings}
           columnDefs={colDefs}

@@ -17,6 +17,8 @@ function App() {
       navigate('/customers')
     } else if (newValue === 1) {
       navigate('/trainings')
+    } else {
+      navigate('/customers')
     }
   }
   
